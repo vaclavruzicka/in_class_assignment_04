@@ -1,8 +1,8 @@
-import { getPosts } from "./api";
+import { getPosts } from "./api.js";
 
 async function displayPosts() {
     const container = document.getElementById('postContainer')
-}
+
 try {
     const posts = await getPosts()
 
@@ -13,6 +13,7 @@ try {
     })
 } catch (err) {
     container.innerHTML = `<p style="color:red;">Failed to load posts: ${err.message}</p>`
+}
 }
 
 displayPosts()
